@@ -9,7 +9,7 @@ treatment of the SM itself, with every equation needed to reimplement it
 and an explicit catalogue of PyBerny's deviations, see
 :doc:`standard_method`.
 
-.. todo:: Make the algorithm `fully conform <https://github.com/jhrmnn/pyberny/issues/29>`_ to the SM.
+.. todo:: Make the algorithm `fully conform <https://github.com/pyberny/pyberny/issues/29>`_ to the SM.
 
 Sketch of the algorithm
 -----------------------
@@ -57,7 +57,7 @@ Redundant internal coordinates
 5. In the case of a crystal, just the internal coordinate closest to the
    original unit cell is retained from all its periodic images.
 
-.. todo:: Implement `linear bends <https://github.com/jhrmnn/pyberny/issues/30>`_.
+.. todo:: Implement `linear bends <https://github.com/pyberny/pyberny/issues/30>`_.
 
 Generalized inverse
 -------------------

@@ -232,7 +232,7 @@ constraint if needed.
 
 :pb:`Not implemented in PyBerny.` Linear-bend handling via dummy atoms is
 open issue
-`#30 <https://github.com/jhrmnn/pyberny/issues/30>`_. PyBerny currently
+`#30 <https://github.com/pyberny/pyberny/issues/30>`_. PyBerny currently
 just skips dihedrals through nearly-linear angles (within
 :math:`5°` of :math:`0` or :math:`\pi`; see ``lin_thre`` in
 :func:`berny.coords.get_dihedrals`) via a recursive "chain through the
@@ -494,7 +494,7 @@ following rules.
 
 :pb:`Not implemented in PyBerny.` Only minimisation is supported. TS
 support is part of open issue
-`#29 <https://github.com/jhrmnn/pyberny/issues/29>`_.
+`#29 <https://github.com/pyberny/pyberny/issues/29>`_.
 
 
 Trust region
@@ -794,8 +794,8 @@ PyBerny vs. SM at a glance
      - not used
      - quartic-then-cubic between best and current
 
-.. _#29: https://github.com/jhrmnn/pyberny/issues/29
-.. _#30: https://github.com/jhrmnn/pyberny/issues/30
+.. _#29: https://github.com/pyberny/pyberny/issues/29
+.. _#30: https://github.com/pyberny/pyberny/issues/30
 
 
 Additional references

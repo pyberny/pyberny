@@ -51,5 +51,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - CLI
 
-[unreleased]: https://github.com/jhrmnn/pyberny/compare/0.6.3...HEAD
-[0.6.3]: https://github.com/jhrmnn/pyberny/releases/tag/0.6.3
+[unreleased]: https://github.com/pyberny/pyberny/compare/0.6.3...HEAD
+[0.6.3]: https://github.com/pyberny/pyberny/releases/tag/0.6.3

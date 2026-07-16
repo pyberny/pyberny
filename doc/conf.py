@@ -62,7 +62,7 @@ html_theme = 'alabaster'
 html_theme_options = {
     'description': description,
     'github_button': True,
-    'github_user': 'jhrmnn',
+    'github_user': 'pyberny',
     'github_repo': 'pyberny',
     'badge_branch': 'master',
     'codecov_button': True,

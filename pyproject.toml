@@ -8,8 +8,8 @@ version = "0.0.0"
 description = "Molecular/crystal structure optimizer"
 readme = "README.md"
 authors = ["Jan Hermann <dev@jan.hermann.name>"]
-repository = "https://github.com/jhrmnn/pyberny"
-documentation = "https://jhrmnn.github.io/pyberny"
+repository = "https://github.com/pyberny/pyberny"
+documentation = "https://pyberny.nablapsi.science"
 license = "MPL-2.0"
 packages = [
     { include = "berny", from = "src" },
