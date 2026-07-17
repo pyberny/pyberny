@@ -59,8 +59,11 @@ intersphinx_mapping = {
 exclude_patterns = ['build', '.DS_Store']
 
 html_theme = 'alabaster'
+html_favicon = '_static/favicon-32.png'
 html_theme_options = {
     'description': description,
+    'logo': 'pyberny-lockup.svg',
+    'logo_name': False,
     'github_button': True,
     'github_user': 'pyberny',
     'github_repo': 'pyberny',

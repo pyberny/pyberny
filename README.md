@@ -1,4 +1,9 @@
-# PyBerny
+<h1 align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="doc/_static/pyberny-lockup-dark.svg">
+  <img alt="PyBerny" src="doc/_static/pyberny-lockup.svg" width="320">
+</picture>
+</h1>
 
 ![checks](https://img.shields.io/github/checks-status/pyberny/pyberny/master.svg)
 [![coverage](https://img.shields.io/codecov/c/github/pyberny/pyberny.svg)](https://codecov.io/gh/pyberny/pyberny)
