@@ -12,7 +12,7 @@ jobs:
   publish:
     name: Publish to PyPI and GitHub Release
     if: >-
-      github.repository == 'jhrmnn/pyberny' &&
+      github.repository == 'pyberny/pyberny' &&
       github.event.workflow_run.event == 'release' &&
       github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
