@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.7.0] - 2026-07-17
 
 ### Added
 
@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for NumPy 2.
 - Covalent radii for Ce–Yb, Po, At, and Fr–U from Cordero et al., *Dalton Trans.*, 2008, 2832, so that geometries containing these elements no longer crash `InternalCoords`.
 - New `berny.BernyParams` dataclass listing every tunable optimizer parameter; useful for discovery and type-checked construction.
-- `berny.solvers.MopacSolver` now accepts `charge` and `mult` keyword arguments so charged or open-shell systems no longer have to be patched in by hand.
 - `berny.solvers.XTBSolver`, a GFN-xTB backend (default GFN2-xTB) evaluated through the `tblite` library (shipped in the `benchmark` extra: `pip install pyberny[benchmark]`). It offers a smoother semiempirical potential-energy surface than PM7, which can be effectively discontinuous near flat minima.
 - Opt-in benchmark suite (`scripts/benchmark.py`) reproducing 19 of the 20 molecules from Birkholz & Schlegel, *Theor. Chem. Acc.* **135**, 84 (2016); PySCF runs are driven through PySCF's own `pyscf.geomopt.berny_solver` bridge.
 - Linear-bend internal coordinates via dummy ("ghost") atoms (issue #30). Near-linear triples `i-j-k` (angle > 175°) now place two mutually orthogonal dummy atoms perpendicular to the `i-k` axis and replace the singular `Angle(i,j,k)` with four well-behaved bends through ≈90°. This fixes optimization failures for molecules containing triple bonds (acetylenes, nitriles, CO₂) reported in issue #23. Dummy positions live in `InternalCoords.dummy_atoms` and are refreshed from the real-atom coordinates on every step; the `Geometry` yielded by `Berny` should be treated as immutable by callers. The optimizer additionally rebuilds the internal-coordinate set on the fly when an sp-like triple crosses the linear threshold mid-run (175° to enter, 170° to exit), so molecules that *become* linear during optimization (e.g. a bent CO₂ relaxing toward 180°) get the same dummy-atom treatment as molecules that start linear.
@@ -31,8 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dropped the runtime dependency on `setuptools` (`pkg_resources`).
 - Unknown keyword arguments to `Berny()` now raise `TypeError` instead of being silently absorbed.
 - Mid-run internal-coordinate rebuilds now preserve accumulated Hessian curvature for surviving coordinates instead of restarting entirely from a diagonal guess.
-- Linear-bend mid-run rebuild now also fires on near-linear angles at higher-coordination centres (not only sp-like ones); the singular angle is dropped rather than replaced by dummies and the dependent dihedrals are reconstructed against the straightened geometry. Fixes a class of estradiol / zn_edta optimization failures (pinv warnings, trust-radius crash) at a small step-count cost on cases where the offending angle was already stable. `mopac_pm7_steps` references updated for estradiol (11→27), azadirachtin (60→66), zn_edta (100→119), acanil01 (44→40), and mesityl_oxide (8→12) accordingly; benchmark MOPAC ceiling raised from 110 to 130 steps to accommodate zn_edta's longer trajectory.
-- `berny.solvers.MopacSolver` now reads MOPAC's `AUX` file instead of the human-readable `.out` file. The `.out` heat of formation is printed only to `1e-5 kcal/mol` (a ~1.6e-8 Ha grid); the `AUX` file carries the same energy and the gradients to 15 significant figures, lowering the solver's effective noise floor by ~1000× (to ~5e-12 Ha). With the noise gate no longer masked by print quantization, the benchmark's PM7-specific `energy_noise = 2e-7` override is dropped (default `2e-8`). Some PM7 trajectories shift accordingly: in the Birkholz–Schlegel set `raffinose` now converges (was a non-converger) while `azadirachtin` no longer converges within the step ceiling (its flat minimum locks onto the trust-region sphere once the noise floor drops); `mopac_pm7_steps` references regenerated for the affected molecules in both benchmark sets.
+- Linear-bend mid-run rebuild now also fires on near-linear angles at higher-coordination centres (not only sp-like ones); the singular angle is dropped rather than replaced by dummies and the dependent dihedrals are reconstructed against the straightened geometry. Fixes a class of estradiol / zn_edta optimization failures (pinv warnings, trust-radius crash).
 
 ### Removed
 
@@ -51,5 +49,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - CLI
 
-[unreleased]: https://github.com/pyberny/pyberny/compare/0.6.3...HEAD
+[0.7.0]: https://github.com/pyberny/pyberny/compare/0.6.3...0.7.0
 [0.6.3]: https://github.com/pyberny/pyberny/releases/tag/0.6.3
