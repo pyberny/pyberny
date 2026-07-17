@@ -26,6 +26,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unknown keyword arguments to `Berny()` now raise `TypeError` ([#51](https://github.com/pyberny/pyberny/pull/51))
 - Mid-run coordinate rebuilds preserve accumulated Hessian curvature ([#122](https://github.com/pyberny/pyberny/pull/122))
 - Linear-bend rebuild also fires at higher-coordination centres ([#104](https://github.com/pyberny/pyberny/pull/104))
+- Convergence now accounts for estimated energy noise, tunable via a new `energy_noise` parameter ([#108](https://github.com/pyberny/pyberny/pull/108))
+- `Berny` can write a structured per-step JSON trace via a new `trace` argument ([#112](https://github.com/pyberny/pyberny/pull/112))
+- Repository and documentation moved to the `pyberny` GitHub organization ([#183](https://github.com/pyberny/pyberny/pull/183))
 
 ### Removed
 
