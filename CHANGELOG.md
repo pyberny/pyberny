@@ -10,32 +10,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - `symmetry` argument to `Berny`: point-group detection and opt-in symmetry breaking of start geometries ([#162](https://github.com/pyberny/pyberny/pull/162))
+- `molsym` as a required dependency, backing the `symmetry` feature ([#162](https://github.com/pyberny/pyberny/pull/162), [#184](https://github.com/pyberny/pyberny/pull/184))
 - NumPy 2 support ([#43](https://github.com/pyberny/pyberny/pull/43))
 - Covalent radii for Ce–Yb, Po, At, and Fr–U ([#45](https://github.com/pyberny/pyberny/pull/45))
-- `berny.BernyParams` dataclass exposing all optimizer parameters ([#51](https://github.com/pyberny/pyberny/pull/51))
 - `berny.solvers.XTBSolver`, a GFN-xTB backend via `tblite` (default GFN2-xTB) ([#139](https://github.com/pyberny/pyberny/pull/139))
 - Linear-bend internal coordinates via dummy atoms ([#53](https://github.com/pyberny/pyberny/pull/53))
 - `Ghost`, `X`, and `Bq` basis-function-only centres ([#53](https://github.com/pyberny/pyberny/pull/53))
 - `berny.tests` subpackage of reusable, optimizer-agnostic end-to-end tests ([#101](https://github.com/pyberny/pyberny/pull/101))
-- `berny.benchmarks` subpackage bundling the Birkholz–Schlegel ([#55](https://github.com/pyberny/pyberny/pull/55)), Baker ([#84](https://github.com/pyberny/pyberny/pull/84)), and oligomer ([#127](https://github.com/pyberny/pyberny/pull/127)) sets with a discovery API ([#116](https://github.com/pyberny/pyberny/pull/116))
-- `scripts/benchmark.py` benchmark runner ([#55](https://github.com/pyberny/pyberny/pull/55))
-- Interactive 3D viewer of the benchmark molecules in the docs ([#106](https://github.com/pyberny/pyberny/pull/106), [#180](https://github.com/pyberny/pyberny/pull/180))
+- Benchmark suite: `scripts/benchmark.py` runner and a `berny.benchmarks` subpackage bundling the Birkholz–Schlegel ([#55](https://github.com/pyberny/pyberny/pull/55)), Baker ([#84](https://github.com/pyberny/pyberny/pull/84)), and oligomer ([#127](https://github.com/pyberny/pyberny/pull/127)) sets with a discovery API ([#116](https://github.com/pyberny/pyberny/pull/116))
 - PEP 561 `py.typed` marker; fully typed under `mypy --strict` ([#119](https://github.com/pyberny/pyberny/pull/119))
 
 ### Changed
 
-- Minimum supported Python raised to 3.10 ([#119](https://github.com/pyberny/pyberny/pull/119))
 - `berny.Math.FindrootException` renamed to `berny.Math.FindrootError` ([#42](https://github.com/pyberny/pyberny/pull/42))
-- Dropped the runtime `setuptools` (`pkg_resources`) dependency ([#42](https://github.com/pyberny/pyberny/pull/42))
 - Unknown keyword arguments to `Berny()` now raise `TypeError` ([#51](https://github.com/pyberny/pyberny/pull/51))
 - Mid-run coordinate rebuilds preserve accumulated Hessian curvature ([#122](https://github.com/pyberny/pyberny/pull/122))
 - Linear-bend rebuild also fires at higher-coordination centres ([#104](https://github.com/pyberny/pyberny/pull/104))
 
 ### Removed
 
+- Support for Python older than 3.10 ([#119](https://github.com/pyberny/pyberny/pull/119))
+- The runtime `setuptools` (`pkg_resources`) dependency ([#42](https://github.com/pyberny/pyberny/pull/42))
 - `berny.solvers.MopacSolver` (use `XTBSolver`) ([#142](https://github.com/pyberny/pyberny/pull/142))
 - The `"mopac"` geometry output format ([#142](https://github.com/pyberny/pyberny/pull/142))
-- The module-level `berny.berny.defaults` dict (use `BernyParams`) ([#51](https://github.com/pyberny/pyberny/pull/51))
+- The module-level `berny.berny.defaults` dict; pass overrides as `Berny()` keyword arguments instead ([#51](https://github.com/pyberny/pyberny/pull/51))
 
 ### Fixed
 
