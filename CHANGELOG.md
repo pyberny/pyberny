@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Ghost`, `X`, and `Bq` basis-function-only centres ([#53](https://github.com/pyberny/pyberny/pull/53))
 - `berny.tests` subpackage of reusable, optimizer-agnostic end-to-end tests ([#101](https://github.com/pyberny/pyberny/pull/101))
 - Benchmark suite: `scripts/benchmark.py` runner and a `berny.benchmarks` subpackage bundling the Birkholz–Schlegel ([#55](https://github.com/pyberny/pyberny/pull/55)), Baker ([#84](https://github.com/pyberny/pyberny/pull/84)), and oligomer ([#127](https://github.com/pyberny/pyberny/pull/127)) sets with a discovery API ([#116](https://github.com/pyberny/pyberny/pull/116))
+- `energy_noise` optimizer parameter for noise-aware convergence ([#108](https://github.com/pyberny/pyberny/pull/108))
+- `trace` argument to `Berny` writing a structured per-step JSON trace ([#112](https://github.com/pyberny/pyberny/pull/112))
 - PEP 561 `py.typed` marker; fully typed under `mypy --strict` ([#119](https://github.com/pyberny/pyberny/pull/119))
 
 ### Changed
@@ -26,8 +28,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Unknown keyword arguments to `Berny()` now raise `TypeError` ([#51](https://github.com/pyberny/pyberny/pull/51))
 - Mid-run coordinate rebuilds preserve accumulated Hessian curvature ([#122](https://github.com/pyberny/pyberny/pull/122))
 - Linear-bend rebuild also fires at higher-coordination centres ([#104](https://github.com/pyberny/pyberny/pull/104))
-- Convergence now accounts for estimated energy noise, tunable via a new `energy_noise` parameter ([#108](https://github.com/pyberny/pyberny/pull/108))
-- `Berny` can write a structured per-step JSON trace via a new `trace` argument ([#112](https://github.com/pyberny/pyberny/pull/112))
 - Repository and documentation moved to the `pyberny` GitHub organization ([#183](https://github.com/pyberny/pyberny/pull/183))
 
 ### Removed
