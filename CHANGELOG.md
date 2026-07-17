@@ -31,8 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Support for Python older than 3.10 ([#119](https://github.com/pyberny/pyberny/pull/119))
 - The runtime `setuptools` (`pkg_resources`) dependency ([#42](https://github.com/pyberny/pyberny/pull/42))
-- `berny.solvers.MopacSolver` (use `XTBSolver`) ([#142](https://github.com/pyberny/pyberny/pull/142))
-- The `"mopac"` geometry output format ([#142](https://github.com/pyberny/pyberny/pull/142))
+- `berny.solvers.MopacSolver` and the `"mopac"` geometry output format (use `XTBSolver`) ([#142](https://github.com/pyberny/pyberny/pull/142))
 - The module-level `berny.berny.defaults` dict; pass overrides as `Berny()` keyword arguments instead ([#51](https://github.com/pyberny/pyberny/pull/51))
 
 ### Fixed
