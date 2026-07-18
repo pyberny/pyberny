@@ -1,0 +1,202 @@
+[
+  {
+    "name": "polyglycine_n4",
+    "bn": 41,
+    "fn": 38,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0008703894659234379,
+    "rmsd": 0.07969021001208328,
+    "saved": 3
+  },
+  {
+    "name": "polyglycine_n5",
+    "bn": 51,
+    "fn": 45,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0008020429918076388,
+    "rmsd": 0.151537800795794,
+    "saved": 6
+  },
+  {
+    "name": "polyglycine_n6",
+    "bn": 66,
+    "fn": 57,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0034955486882282116,
+    "rmsd": 0.21706515028490786,
+    "saved": 9
+  },
+  {
+    "name": "polyglycine_n7",
+    "bn": 52,
+    "fn": 49,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0004634367630629299,
+    "rmsd": 0.10620483438050403,
+    "saved": 3
+  },
+  {
+    "name": "polyserine_n3",
+    "bn": 55,
+    "fn": 41,
+    "bc": true,
+    "fc": true,
+    "dE": 0.022413062696067243,
+    "rmsd": 0.44127106455909454,
+    "saved": 14
+  },
+  {
+    "name": "polyserine_n5",
+    "bn": 82,
+    "fn": 78,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0008929910959665222,
+    "rmsd": 0.07371606039144538,
+    "saved": 4
+  },
+  {
+    "name": "polyserine_n6",
+    "bn": 61,
+    "fn": 57,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0004927890653050326,
+    "rmsd": 0.10560093989760651,
+    "saved": 4
+  },
+  {
+    "name": "polyserine_n7",
+    "bn": 58,
+    "fn": 50,
+    "bc": true,
+    "fc": true,
+    "dE": 0.00472413041009645,
+    "rmsd": 0.28190958850863873,
+    "saved": 8
+  },
+  {
+    "name": "polyserine_n8",
+    "bn": 72,
+    "fn": 66,
+    "bc": true,
+    "fc": true,
+    "dE": 0.001223928856077805,
+    "rmsd": 0.10601129809054899,
+    "saved": 6
+  },
+  {
+    "name": "polyalanine_n6",
+    "bn": 68,
+    "fn": 66,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0014076458812795067,
+    "rmsd": 0.1415859207811978,
+    "saved": 2
+  },
+  {
+    "name": "polyalanine_n8",
+    "bn": 31,
+    "fn": 29,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0021130201264440984,
+    "rmsd": 0.09020735588131568,
+    "saved": 2
+  },
+  {
+    "name": "nylon6_n4",
+    "bn": 45,
+    "fn": 36,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0014774061059341648,
+    "rmsd": 0.26495471438898244,
+    "saved": 9
+  },
+  {
+    "name": "nylon6_n7",
+    "bn": 44,
+    "fn": 37,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0006667810401950192,
+    "rmsd": 0.17373427008929207,
+    "saved": 7
+  },
+  {
+    "name": "nylon6_n5",
+    "bn": 79,
+    "fn": 79,
+    "bc": true,
+    "fc": true,
+    "dE": -0.000273307852154403,
+    "rmsd": 0.26399046019115563,
+    "saved": 0
+  },
+  {
+    "name": "nylon6_n6",
+    "bn": 163,
+    "fn": 149,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0005775466114243955,
+    "rmsd": 0.5324129989103737,
+    "saved": 14
+  },
+  {
+    "name": "polyglycine_n8",
+    "bn": 200,
+    "fn": 200,
+    "bc": false,
+    "fc": false,
+    "dE": 0.10320173155118795,
+    "rmsd": 0.3293644338113504,
+    "saved": null
+  },
+  {
+    "name": "polyethylene_n8",
+    "bn": 4,
+    "fn": 4,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0,
+    "rmsd": 2.6935103288749727e-05,
+    "saved": 0
+  },
+  {
+    "name": "thiophene_n4",
+    "bn": 12,
+    "fn": 9,
+    "bc": true,
+    "fc": true,
+    "dE": 0.00430102531751686,
+    "rmsd": 0.0890397391540454,
+    "saved": 3
+  },
+  {
+    "name": "anthracene",
+    "bn": 7,
+    "fn": 6,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0021394571010091568,
+    "rmsd": 0.03913057807574401,
+    "saved": 1
+  },
+  {
+    "name": "pentacene",
+    "bn": 7,
+    "fn": 6,
+    "bc": true,
+    "fc": true,
+    "dE": 0.0015840484551077338,
+    "rmsd": 0.033050549481465734,
+    "saved": 1
+  }
+]
