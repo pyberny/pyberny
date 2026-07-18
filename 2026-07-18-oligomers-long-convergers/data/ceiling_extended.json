@@ -1,0 +1,10 @@
+{
+  "note": "Ceiling non-convergers rerun with maxsteps raised (default is 100). All converge.",
+  "solver": "GFN2-xTB via tblite",
+  "results": [
+    {"name": "nylon6_n5", "atoms": 98, "maxsteps": 300, "converged": true, "steps": 134},
+    {"name": "nylon6_n6", "atoms": 117, "maxsteps": 300, "converged": true, "steps": 148},
+    {"name": "polyglycine_n8", "atoms": 68, "maxsteps": 300, "converged": true, "steps": 226}
+  ],
+  "caveat": "GFN2-xTB step counts for these floppy near-ceiling chains are not bitwise reproducible across runners; a later maxsteps=200 rerun gave nylon6_n5=79 and nylon6_n6=163, i.e. these sit right at the margin of the 100-step ceiling."
+}

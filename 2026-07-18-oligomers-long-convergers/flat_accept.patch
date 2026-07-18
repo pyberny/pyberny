@@ -1,0 +1,53 @@
+diff --git a/src/berny/berny.py b/src/berny/berny.py
+index cbecf60..640aece 100644
+--- a/src/berny/berny.py
++++ b/src/berny/berny.py
+@@ -60,6 +60,7 @@ class BernyParams:
+     energy_noise: float = 2e-8
+     dihedral: bool = True
+     superweakdih: bool = False
++    flat_energy: float = 0.0  # EXPERIMENT: flat-surface force-based accept (Ha)
+ 
+ 
+ class OptPoint(NamedTuple):
+@@ -370,6 +371,7 @@ class Berny(Generator):  # type: ignore[type-arg]
+             s.params,
+             log=log,
+             record=record,
++            dE_predicted=dE,
+         )
+         max_steps_reached = self._n == self._maxsteps
+         if max_steps_reached:
+@@ -613,10 +615,30 @@ def is_converged(
+     log: Any = no_log,
+     *,
+     record: dict[str, Any] | None = None,
++    dE_predicted: float | None = None,
+ ) -> bool:
++    grad_rms = Math.rms(forces)
++    grad_max = np.max(abs(forces))
++    # EXPERIMENT: flat-surface force-based acceptance. If both gradient
++    # criteria are met and the predicted energy change of the step is below
++    # ``flat_energy``, the current point is a stationary point at a flat part
++    # of the surface; accept even if the displacement criteria (which soft
++    # modes inflate) are not met.
++    if (
++        params.flat_energy > 0
++        and dE_predicted is not None
++        and grad_rms is not None
++        and grad_rms < params.gradientrms
++        and grad_max < params.gradientmax
++        and abs(dE_predicted) < params.flat_energy
++    ):
++        log('* Forces converged on a flat surface (|dE_pred| < flat_energy) => OK')
++        if record is not None:
++            record['convergence'] = {'criteria': [], 'all_matched': True, 'flat': True}
++        return True
+     criteria: list[tuple[Any, ...]] = [
+-        ('Gradient RMS', Math.rms(forces), params.gradientrms),
+-        ('Gradient maximum', np.max(abs(forces)), params.gradientmax),
++        ('Gradient RMS', grad_rms, params.gradientrms),
++        ('Gradient maximum', grad_max, params.gradientmax),
+     ]
+     if on_sphere:
+         criteria.append(('Minimization on sphere', False))
